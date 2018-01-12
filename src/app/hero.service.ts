@@ -14,12 +14,16 @@ export class HeroService {
     private messageService: MessagesService) { }
 
   getHeroes(): Observable<Hero[]> {
-    this.messageService.add('fetched heroes');
+    this.log('fetched heroes');
     return of(HEROES);
   }
 
   getHero(id): Observable<Hero> {
-    this.messageService.add(`fetched hero: , ${id}`);
+    this.log(`fetched hero: , ${id}`);
     return of(HEROES.find(hero => hero.id == id));
+  }
+
+  log(message: String) {
+    this.messageService.add(message);
   }
 }
