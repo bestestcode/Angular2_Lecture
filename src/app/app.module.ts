@@ -12,6 +12,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessagesService } from './messages.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
